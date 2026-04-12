@@ -7,60 +7,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cobalt-navy: #001A33; /* 核心机构蓝 */
-            --heritage-gold: #B89146; /* 哑光品牌金 */
+            --cobalt-navy: #001A33; 
+            --heritage-gold: #B89146; 
             --off-white: #FBFBFB;
             --slate: #425466;
             --border: rgba(0,0,0,0.08);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--cobalt-navy); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: #fff; color: var(--cobalt-navy); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 
-        /* 极简机构导航 */
-        nav { position: fixed; top: 0; width: 100%; padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); }
-        .logo-box { display: flex; align-items: center; gap: 15px; }
-        .logo-img { height: 40px; }
-        .nav-links a { text-decoration: none; color: var(--cobalt-navy); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-left: 40px; transition: 0.3s; }
+        /* 极大化 Logo 导航栏 */
+        nav { position: fixed; top: 0; width: 100%; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border-bottom: 2px solid var(--heritage-gold); }
+        .logo-box { display: flex; align-items: center; }
+        
+        /* 核心修改：大幅提升 Logo 尺寸 */
+        .logo-img { height: 85px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
+        .logo-img:hover { transform: scale(1.02); }
+
+        .nav-links a { text-decoration: none; color: var(--cobalt-navy); font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-left: 40px; transition: 0.3s; }
         .nav-links a:hover { color: var(--heritage-gold); }
 
-        /* Hero: 资本愿景层 */
-        .hero { height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; background: linear-gradient(135deg, #fff 0%, #f4f7f9 100%); position: relative; overflow: hidden; }
-        .hero::after { content: ''; position: absolute; right: -10%; top: 10%; width: 50%; height: 80%; background: url('https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1200&q=80') no-repeat; background-size: cover; opacity: 0.1; border-radius: 20px; transform: rotate(-2deg); }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 30px; letter-spacing: -1px; }
-        .hero p { font-size: 1.4rem; color: var(--slate); max-width: 650px; line-height: 1.6; font-weight: 300; }
+        /* Hero Section */
+        .hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; padding: 0 8%; background: linear-gradient(135deg, #fff 0%, #f4f7f9 100%); position: relative; margin-top: 110px; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(2.8rem, 5.5vw, 5rem); font-weight: 700; line-height: 1.1; margin-bottom: 30px; letter-spacing: -1px; }
+        .hero p { font-size: 1.4rem; color: var(--slate); max-width: 700px; line-height: 1.6; font-weight: 300; }
 
-        /* 核心优势板块 */
-        .stats-strip { background: var(--cobalt-navy); color: white; padding: 60px 8%; display: flex; justify-content: space-between; }
+        .stats-strip { background: var(--cobalt-navy); color: white; padding: 60px 8%; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
         .stat-item h3 { font-size: 2.5rem; color: var(--heritage-gold); margin-bottom: 10px; }
         .stat-item p { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.7; }
 
-        /* 深度 About 板块 */
-        .about-section { padding: 120px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
-        .about-content h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; margin-bottom: 30px; }
-        .about-content p { color: var(--slate); font-size: 1.1rem; margin-bottom: 25px; }
-
-        /* 战略收购流程 */
+        .about-section { padding: 120px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-content h2 { font-family: 'Cinzel', serif; font-size: 2.8rem; margin-bottom: 30px; border-bottom: 3px solid var(--heritage-gold); display: inline-block; padding-bottom: 10px; }
+        
         .process-section { background: var(--off-white); padding: 120px 8%; }
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
-        .card { background: white; padding: 50px; border: 1px solid var(--border); transition: 0.4s; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); border-color: var(--heritage-gold); }
-        .card h4 { margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
+        .card { background: white; padding: 50px; border: 1px solid var(--border); border-top: 4px solid var(--cobalt-navy); transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.08); border-top-color: var(--heritage-gold); }
 
-        /* 资本合作/表单区 */
         .contact-section { padding: 120px 8%; display: flex; justify-content: center; }
-        .contact-card { background: var(--cobalt-navy); color: white; width: 100%; max-width: 1000px; display: grid; grid-template-columns: 1fr 1.2fr; border-radius: 4px; overflow: hidden; }
+        .contact-card { background: var(--cobalt-navy); color: white; width: 100%; max-width: 1100px; display: grid; grid-template-columns: 1fr 1.2fr; border-radius: 8px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.2); }
         .contact-info { padding: 80px; background: rgba(255,255,255,0.03); }
-        .contact-form { padding: 80px; background: white; color: var(--cobalt-navy); }
-        .contact-form input { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid var(--border); background: #f9f9f9; font-family: 'Inter'; }
-        .contact-form button { width: 100%; padding: 20px; background: var(--cobalt-navy); color: white; border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; }
+        .contact-form { padding: 80px; background: #fff; color: var(--cobalt-navy); }
+        .contact-form input { width: 100%; padding: 18px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
+        .contact-form button { width: 100%; padding: 22px; background: var(--cobalt-navy); color: white; border: none; font-weight: 800; text-transform: uppercase; cursor: pointer; letter-spacing: 2px; transition: 0.3s; }
+        .contact-form button:hover { background: var(--heritage-gold); }
 
-        /* Footer & Compliance */
-        footer { padding: 80px 8% 40px; background: #fff; border-top: 1px solid var(--border); }
+        /* Footer Logo 优化 */
+        footer { padding: 100px 8% 40px; background: #fff; border-top: 1px solid var(--border); }
+        .footer-logo-large { height: 75px; width: auto; object-fit: contain; margin-bottom: 40px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px; }
-        .legal-text { font-size: 0.75rem; color: #888; line-height: 1.8; border-top: 1px solid var(--border); padding-top: 40px; }
+        .legal-text { font-size: 0.78rem; color: #777; line-height: 1.8; border-top: 1px solid var(--border); padding-top: 40px; }
 
-        @media (max-width: 900px) { .about-section, .grid, .contact-card, .footer-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 3rem; } }
+        @media (max-width: 900px) { 
+            .about-section, .contact-card, .footer-grid { grid-template-columns: 1fr; } 
+            nav { flex-direction: column; padding: 20px; }
+            .nav-links { margin-top: 20px; }
+            .nav-links a { margin: 0 15px; font-size: 0.8rem; }
+            .logo-img { height: 60px; }
+        }
     </style>
 </head>
 <body>
@@ -70,7 +75,7 @@
             <img src="logo.jpg" alt="Pan&Co. Realty LLC" class="logo-img">
         </div>
         <div class="nav-links">
-            <a href="#about">About the Firm</a>
+            <a href="#about">The Firm</a>
             <a href="#process">Strategy</a>
             <a href="#contact">Acquisitions</a>
         </div>
@@ -78,54 +83,61 @@
 
     <section class="hero">
         <h1>Institutional Integrity.<br>Strategic Liquidity.</h1>
-        <p>Pan&Co. Realty LLC is a premier private equity real estate firm dedicated to large-scale residential acquisitions across Southern California.</p>
-        <div style="margin-top: 40px;">
-            <a href="#contact" style="display:inline-block; padding: 18px 40px; background: var(--cobalt-navy); color: white; text-decoration: none; font-weight: 700; border-radius: 2px; font-size: 0.9rem; letter-spacing: 1px;">INITIATE CONSULTATION</a>
+        <p>Pan&Co. Realty LLC is a premier private equity real estate firm specializing in high-velocity residential acquisitions and strategic asset stabilization across Southern California.</p>
+        <div style="margin-top: 50px;">
+            <a href="#contact" style="display:inline-block; padding: 22px 50px; background: var(--cobalt-navy); color: white; text-decoration: none; font-weight: 800; border-radius: 4px; font-size: 1rem; letter-spacing: 2px; transition: 0.3s; border: 2px solid var(--cobalt-navy);">REQUEST AN OFFER</a>
         </div>
     </section>
 
     <section class="stats-strip">
-        <div class="stat-item"><h3>DIRECT</h3><p>CAPITAL ALLOCATION</p></div>
-        <div class="stat-item"><h3>OFF-MARKET</h3><p>TRANSACTION FOCUS</p></div>
-        <div class="stat-item"><h3>$0</h3><p>SELLER COMMISSIONS</p></div>
-        <div class="stat-item"><h3>AS-IS</h3><p>ASSET ACQUISITION</p></div>
+        <div class="stat-item"><h3>DIRECT</h3><p>INSTITUTIONAL CAPITAL</p></div>
+        <div class="stat-item"><h3>OFF-MARKET</h3><p>EXCLUSIVE PIPELINE</p></div>
+        <div class="stat-item"><h3>10-14 DAYS</h3><p>LIQUIDITY TIMELINE</p></div>
+        <div class="stat-item"><h3>AS-IS</h3><p>ASSET ADVISORY</p></div>
     </section>
 
     <section class="about-section" id="about">
         <div class="about-content">
-            <h2 style="color: var(--heritage-gold);">The Firm</h2>
-            <p>Pan&Co. Realty LLC stands at the intersection of local expertise and institutional discipline. Headquartered in Montebello, we serve as a strategic partner for property owners seeking certain and discreet asset disposition.</p>
-            <p>Our mandate is clear: to provide immediate liquidity while maintaining the highest level of professional discretion and transactional transparency.</p>
+            <h2>The Firm</h2>
+            <p>Pan&Co. Realty LLC serves as a vital bridge between distressed assets and institutional stability. Headquartered in Montebello, we leverage deep local market intelligence to provide property owners with an unparalleled path to disposition.</p>
+            <p>Our mandate focuses on absolute transparency and capital preservation, ensuring that every transaction reflects our commitment to professional excellence.</p>
         </div>
-        <div style="border-left: 4px solid var(--heritage-gold); padding-left: 40px;">
-            <h4 style="font-family: 'Cinzel'; margin-bottom: 20px;">Executive Commitment</h4>
-            <p style="font-style: italic; color: var(--slate);">"Our goal is not just to close transactions, but to redefine the standard of excellence in the private acquisition sector."</p>
+        <div style="background: var(--off-white); padding: 50px; border-radius: 8px; border-left: 6px solid var(--heritage-gold);">
+            <h4 style="font-family: 'Cinzel'; margin-bottom: 20px; font-size: 1.3rem;">Corporate Commitment</h4>
+            <p style="font-style: italic; color: var(--slate); font-size: 1.1rem; line-height: 1.8;">"In the Southern California landscape, Pan&Co. stands as a beacon of certainty. We don't just facilitate sales; we provide a sophisticated exit strategy for the modern asset holder."</p>
         </div>
     </section>
 
     <section class="process-section" id="process">
-        <h2 style="font-family: 'Cinzel'; font-size: 2.5rem; text-align: center;">Operational Strategy</h2>
+        <h2 style="font-family: 'Cinzel'; font-size: 3rem; text-align: center; margin-bottom: 20px;">Execution Strategy</h2>
         <div class="grid">
-            <div class="card"><h4>01. Underwriting</h4><p>Proprietary analysis of asset fundamentals to determine peak valuation without market friction.</p></div>
-            <div class="card"><h4>02. Execution</h4><p>Non-contingent cash offers delivered within 24 hours of site assessment.</p></div>
-            <div class="card"><h4>03. Disposition</h4><p>Seamless transfer of ownership through tier-one escrow and title partners.</p></div>
+            <div class="card"><h4>01. Underwriting</h4><p>Proprietary valuation models tailored to the specific nuances of the Southern California micro-markets.</p></div>
+            <div class="card"><h4>02. Commitment</h4><p>Firm, all-cash commitment issued within 24 hours of data verification. No financing contingencies.</p></div>
+            <div class="card"><h4>03. Liquidation</h4><p>Streamlined closing protocols through premier title and escrow partners to ensure rapid capital transfer.</p></div>
         </div>
     </section>
 
     <section class="contact-section" id="contact">
         <div class="contact-card">
             <div class="contact-info">
-                <h3 style="font-family: 'Cinzel'; font-size: 2rem; margin-bottom: 30px; color: var(--heritage-gold);">Acquisition Desk</h3>
-                <p style="opacity: 0.8; margin-bottom: 40px;">Request a formal assessment for your property. Our acquisition directors will provide a comprehensive review.</p>
-                <p><strong>Pan&Co. Realty LLC</strong><br>735 Alder Way<br>Montebello, CA 90640</p>
-                <p style="margin-top: 20px;">(626) 788-8805<br>Info@panrealtygroup.com</p>
+                <h3 style="font-family: 'Cinzel'; font-size: 2.2rem; margin-bottom: 30px; color: var(--heritage-gold);">Acquisitions Desk</h3>
+                <p style="opacity: 0.9; margin-bottom: 40px; font-size: 1.1rem;">Submit your asset for immediate institutional review. Our directors will provide a formal assessment of liquidity options.</p>
+                <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+                    <p style="font-weight: 700; color: var(--heritage-gold); margin-bottom: 10px;">CORPORATE HEADQUARTERS</p>
+                    <p>735 Alder Way<br>Montebello, CA 90640</p>
+                    <p style="margin-top: 20px;">(626) 788-8805<br>Info@panrealtygroup.com</p>
+                </div>
             </div>
             <div class="contact-form">
                 <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                    <input type="text" name="address" placeholder="Property Full Address" required>
-                    <input type="text" name="name" placeholder="Principal Name" required>
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 10px; font-size: 1.2rem;">Property Inquiry</h4>
+                        <p style="color: #888; font-size: 0.9rem;">Please provide accurate property data for formal underwriting.</p>
+                    </div>
+                    <input type="text" name="address" placeholder="Property Address" required>
+                    <input type="text" name="name" placeholder="Legal Principal Name" required>
                     <input type="tel" name="phone" placeholder="Direct Contact Number" required>
-                    <button type="submit">Submit Asset for Review</button>
+                    <button type="submit">Submit for Underwriting</button>
                 </form>
             </div>
         </div>
@@ -134,21 +146,24 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <img src="logo.jpg" alt="Logo" class="logo-img" style="filter: grayscale(1); margin-bottom: 20px;">
-                <p style="color: #666; font-size: 0.9rem;">Private Real Estate Investment Firm.<br>Southern California Division.</p>
+                <img src="logo.jpg" alt="Pan&Co. Realty LLC" class="footer-logo-large">
+                <p style="color: #888; font-size: 0.95rem; max-width: 300px;">A specialized private equity investment firm providing strategic liquidity across the Southern California real estate landscape.</p>
+            </div>
+            <div style="padding-left: 20px;">
+                <h5 style="margin-bottom: 25px; font-size: 0.85rem; letter-spacing: 2px; color: var(--heritage-gold);">GOVERNANCE</h5>
+                <p style="font-size: 0.9rem; color: #666; cursor: pointer;">Privacy Policy</p>
+                <p style="font-size: 0.9rem; color: #666; cursor: pointer; margin-top: 10px;">Terms of Engagement</p>
+                <p style="font-size: 0.9rem; color: #666; cursor: pointer; margin-top: 10px;">Compliance Standards</p>
             </div>
             <div>
-                <h5 style="margin-bottom: 20px; font-size: 0.8rem; letter-spacing: 2px;">GOVERNANCE</h5>
-                <p style="font-size: 0.8rem; color: #888;">Privacy Policy<br>Terms of Engagement<br>Compliance</p>
-            </div>
-            <div>
-                <h5 style="margin-bottom: 20px; font-size: 0.8rem; letter-spacing: 2px;">CONTACT</h5>
-                <p style="font-size: 0.8rem; color: #888;">(626) 788-8805<br>Info@panrealtygroup.com</p>
+                <h5 style="margin-bottom: 25px; font-size: 0.85rem; letter-spacing: 2px; color: var(--heritage-gold);">RESOURCES</h5>
+                <p style="font-size: 0.9rem; color: #666;">(626) 788-8805</p>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">Info@panrealtygroup.com</p>
             </div>
         </div>
         <div class="legal-text">
-            <p><strong>SMS COMPLIANCE:</strong> By submitting your information, you provide express written consent to Pan&Co. Realty LLC to contact you via SMS. Message and data rates may apply. Reply STOP to opt-out. <strong>DATA PRIVACY:</strong> Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. All other categories exclude text messaging originator data and consent; this information will not be shared with any third parties.</p>
-            <p style="margin-top: 20px;">&copy; 2026 Pan&Co. Realty LLC. All rights reserved. Equal Housing Opportunity. </p>
+            <p><strong>SMS DISCLOSURE:</strong> By submitting an inquiry via our digital platform, you provide express written consent to Pan&Co. Realty LLC to initiate professional communications via SMS. Message and data rates may apply. Reply STOP to terminate consent at any time. <strong>CONFIDENTIALITY:</strong> Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Originator data and consent are excluded from all third-party sharing protocols.</p>
+            <p style="margin-top: 25px; font-weight: 600;">&copy; 2026 Pan&Co. Realty LLC. All rights reserved. Equal Housing Opportunity. </p>
         </div>
     </footer>
 
