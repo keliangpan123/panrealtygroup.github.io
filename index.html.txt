@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan&Co. Realty LLC | Southern California Acquisition</title>
+    <style>
+        body { font-family: 'Playfair Display', serif; background-color: #050505; color: #D4AF37; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .container { width: 90%; max-width: 600px; text-align: center; padding-top: 80px; }
+        img { width: 200px; margin-bottom: 30px; }
+        h1 { font-size: 2.5em; letter-spacing: 2px; text-transform: uppercase; }
+        p { color: #A0A0A0; font-family: 'Lato', sans-serif; margin-bottom: 40px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #1a1a1a; border: 1px solid #333; color: white; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #D4AF37; color: #050505; border: none; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+        footer { margin-top: 60px; font-size: 0.75em; color: #666; font-family: sans-serif; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="YOUR_LOGO_URL_HERE.png" alt="Pan&Co. Realty LLC">
+        <h1>Private Acquisition</h1>
+        <p>Direct cash acquisition services for property owners in Southern California. Secure, discreet, and fast.</p>
+        
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <input type="text" name="address" placeholder="Property Address" required>
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <button type="submit">Get Your Private Offer</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Pan&Co. Realty LLC | 7231 Burnie Street, Rosemead, CA 91770 | (626) 788-8805</p>
+        <p>By submitting this form, you consent to receive SMS communications from Pan&Co. Realty LLC. Msg & data rates may apply. Reply STOP to opt-out.</p>
+        <p><a href="#" style="color:#666;">Privacy Policy</a> | <a href="#" style="color:#666;">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
