@@ -3,75 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pan&Co. Realty LLC | Premier SoCal Acquisitions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pan&Co. Realty LLC | Southern California Real Estate Investment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
+        /* 全局变量：极致干净的配色方案 */
         :root {
-            --glass-bg: rgba(10, 11, 16, 0.6); /* 半透明深色，对应皇家蓝 */
-            --glass-border: rgba(197, 160, 89, 0.2); /* 哑光金边框 */
-            --accent-gold: #C5A059;
-            --off-white: #F1F1F1;
-            --text-gray: #A0A0A0;
-            --compliance-gray: #666; /* 水印灰 */
-            --serif-font: 'Playfair Display', serif;
-            --sans-serif-font: 'Montserrat', sans-serif;
+            --primary-black: #0A0A0A;
+            --text-gray: #4A4A4A;
+            --bg-light: #F9F9F9;
+            --white: #FFFFFF;
+            --border-color: #E5E5E5;
+            --button-dark: #111111;
         }
 
-        body, html { margin: 0; padding: 0; height: 100%; font-family: var(--sans-serif-font); overflow: hidden; color: var(--off-white); font-weight: 300; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; color: var(--primary-black); background-color: var(--white); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        
+        /* 导航栏：极简悬浮 */
+        nav { width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); background: var(--white); position: sticky; top: 0; z-index: 100; }
+        .logo-img { height: 45px; object-fit: contain; }
+        .nav-btn { background: var(--button-dark); color: var(--white); text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: 600; font-size: 0.9em; transition: 0.3s; }
+        .nav-btn:hover { background: #333; }
 
-        /* 全屏背景图 (南加州豪宅场景) */
-        .bg-image {
-            background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* 可替换为自定义高清图 */
-            background-size: cover; background-position: center; filter: blur(3px) brightness(0.6); position: fixed; width: 100%; height: 100%; z-index: -1; transform: scale(1.1);
+        /* Hero 核心视觉区 */
+        .hero { padding: 120px 5% 100px; max-width: 1200px; margin: 0 auto; animation: fadeInUp 1s ease-out; }
+        .hero h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.03em; }
+        .hero p { font-size: 1.25rem; color: var(--text-gray); max-width: 800px; margin-bottom: 40px; font-weight: 300; }
+        
+        /* 核心卖点区 (完美复刻 MetaRe 的 ✅ 列表) */
+        .value-props { background-color: var(--bg-light); padding: 100px 5%; }
+        .props-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        @media (max-width: 768px) { .props-container { grid-template-columns: 1fr; } }
+        .props-text h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .check-list { list-style: none; }
+        .check-list li { font-size: 1.1rem; margin-bottom: 20px; display: flex; align-items: flex-start; color: var(--primary-black); font-weight: 400; }
+        .check-icon { margin-right: 15px; font-size: 1.2rem; }
+
+        /* 表单区：极简且充满信任感 */
+        .form-section { padding: 100px 5%; max-width: 800px; margin: 0 auto; }
+        .form-section h2 { font-size: 2.5rem; font-weight: 800; text-align: center; margin-bottom: 10px; }
+        .form-section p.subtitle { text-align: center; color: var(--text-gray); margin-bottom: 50px; font-size: 1.1rem; }
+        
+        form { display: grid; gap: 20px; }
+        input { width: 100%; padding: 18px 20px; font-size: 1rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-light); font-family: 'Inter', sans-serif; transition: 0.3s; }
+        input:focus { outline: none; border-color: var(--primary-black); background: var(--white); }
+        button[type="submit"] { background: var(--button-dark); color: var(--white); border: none; padding: 20px; font-size: 1.1rem; font-weight: 600; cursor: pointer; border-radius: 4px; transition: 0.3s; margin-top: 10px; }
+        button[type="submit"]:hover { background: #333; }
+
+        /* 页脚：合规与专业 */
+        footer { background: var(--primary-black); color: var(--white); padding: 80px 5% 40px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .footer-logo { height: 40px; filter: grayscale(100%) brightness(200%); margin-bottom: 30px; } /* 让 Logo 在黑底上变灰白，更显高级 */
+        .company-info { font-size: 0.95rem; margin-bottom: 40px; color: #999; line-height: 1.8; }
+        .company-info strong { color: var(--white); }
+        
+        /* 10DLC 专属免死金牌区 */
+        .compliance-text { font-size: 0.75rem; color: #666; max-width: 800px; line-height: 1.6; border-top: 1px solid #333; padding-top: 30px; }
+
+        /* 简单的高级入场动画 */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* 顶部 Logo 勋章 (左上角浮动) */
-        .header-logo { position: absolute; top: 40px; left: 40px; width: 220px; opacity: 0.8; z-index: 10; }
-
-        /* 核心毛玻璃表单容器 */
-        .glass-container { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1; padding: 20px; box-sizing: border-box; }
-
-        .form-card {
-            background: var(--glass-bg); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid var(--glass-border); border-radius: 12px;
-            padding: 80px 60px; width: 100%; max-width: 500px; text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .form-card h1 { font-family: var(--sans-serif-font); font-weight: 100; font-size: 2.8em; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 6px; margin: 0 0 20px; }
-        .form-card p { font-size: 1.1em; color: var(--text-gray); font-family: var(--serif-font); margin: 0 0 50px; line-height: 1.6; }
-
-        .form-card input { width: 100%; padding: 18px; margin-bottom: 25px; background: rgba(0,0,0,0.3); border: 1px solid #444; color: white; border-radius: 4px; box-sizing: border-box; font-family: var(--sans-serif-font); font-size: 1em; }
-        .form-card input:focus { border-color: var(--accent-gold); outline: none; }
-
-        .form-card button { width: 100%; padding: 20px; background: var(--accent-gold); color: #000; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 3px; font-size: 1.1em; transition: background 0.3s; margin-top: 10px; }
-        .form-card button:hover { background: #D4AF37; }
-
-        /* 10DLC 声明 (水印化) */
-        .compliance-watermark { font-size: 0.75em; color: var(--compliance-gray); font-family: sans-serif; text-align: center; max-width: 500px; margin: 50px auto 0; line-height: 1.6; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); }
     </style>
 </head>
 <body>
-    <div class="bg-image"></div>
 
-    <img src="image_36.png" alt="Pan&Co. Realty LLC" class="header-logo">
+    <nav>
+        <img src="公司LOGO.jpg" alt="Pan&Co. Realty LLC" class="logo-img">
+        <a href="#form-section" class="nav-btn">Get Cash Offer</a>
+    </nav>
 
-    <div class="glass-container">
-        <div class="form-card">
-            <h1>Direct Offer</h1>
-            <p>Pan&Co. Realty LLC. Discreet direct acquisitions for Southern California's premier asset holders.</p>
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                <input type="text" name="address" placeholder="Property Address" required>
-                <input type="text" name="name" placeholder="Contact Name" required>
-                <input type="tel" name="phone" placeholder="Direct Number" required>
-                <button type="submit">Get Your Private Offer</button>
-            </form>
+    <section class="hero">
+        <h1>Transforming Real Estate <br>into Direct Capital.</h1>
+        <p>Pan&Co. Realty LLC is a Southern California-based real estate investment advisory firm. We specialize in strategic property acquisition, unlocking measurable value for property owners through direct, transparent transactions.</p>
+    </section>
+
+    <section class="value-props">
+        <div class="props-container">
+            <div class="props-text">
+                <h2>Your Next Opportunity.</h2>
+                <p style="color: var(--text-gray); margin-bottom: 30px; font-size: 1.1rem;">We buy houses directly, providing a seamless institutional process for sellers.</p>
+                <ul class="check-list">
+                    <li><span class="check-icon">✅</span> <strong>No Commissions or Hidden Fees</strong> — You keep more of your proceeds.</li>
+                    <li><span class="check-icon">✅</span> <strong>As-Is Purchases</strong> — No need to clean, repair, or stage your home.</li>
+                    <li><span class="check-icon">✅</span> <strong>Fast Closings</strong> — We can close in as little as 7–14 days, or on your timeline.</li>
+                    <li><span class="check-icon">✅</span> <strong>Cash Offers</strong> — We make direct, all-cash offers with no financing delays.</li>
+                    <li><span class="check-icon">✅</span> <strong>Professional & Confidential</strong> — Discreet, respectful, and efficient process.</li>
+                </ul>
+            </div>
+            <div class="props-image">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Architecture" style="width: 100%; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="compliance-watermark">
-        <p>Pan&Co. Realty LLC | 735 Alder Way, Montebello, CA 90640</p>
-        <p>By submitting this form, you consent to receive SMS communications from Pan&Co. Realty LLC. Reply STOP to opt-out.</p>
-    </div>
+    <section class="form-section" id="form-section">
+        <h2>Sell your house to us</h2>
+        <p class="subtitle">Take a minute to write us your house information. A dedicated acquisitions director will contact you.</p>
+        
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <input type="text" name="address" placeholder="Property Address (e.g., 123 Main St, Los Angeles, CA)" required>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+            </div>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address (Optional)">
+            <button type="submit">Submit Property for Review</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="公司LOGO.jpg" alt="Pan&Co. Realty LLC" class="footer-logo">
+            
+            <div class="company-info">
+                <strong>Pan&Co. Realty LLC</strong><br>
+                735 Alder Way, Montebello, CA 90640<br>
+                Info@panrealtygroup.com | (626) 788-8805
+            </div>
+
+            <div class="compliance-text">
+                <p>The information provided on this website and in all Pan&Co. Realty LLC materials is for informational purposes only. Nothing herein shall be construed as legal, tax, or financial advice.</p>
+                <p style="margin-top: 10px;"><strong>SMS Compliance:</strong> By submitting your information via our form, you consent to receive SMS communications from Pan&Co. Realty LLC. Message & data rates may apply. Reply STOP to opt-out at any time.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
