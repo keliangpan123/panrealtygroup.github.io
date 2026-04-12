@@ -17,24 +17,27 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Inter', sans-serif; background-color: #fff; color: var(--cobalt-navy); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 
-        /* 极大化导航栏：专为大 Logo 设计 */
+        /* 极大化导航栏：110px Logo 空间 */
         nav { position: fixed; top: 0; width: 100%; padding: 25px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-bottom: 3px solid var(--heritage-gold); }
         .logo-box { display: flex; align-items: center; }
-        
-        /* Logo 尺寸再次升级：110px 高度 */
         .logo-img { height: 110px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
         .logo-img:hover { transform: scale(1.03); }
 
         .nav-links a { text-decoration: none; color: var(--cobalt-navy); font-size: 0.95rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-left: 45px; transition: 0.3s; }
         .nav-links a:hover { color: var(--heritage-gold); }
 
-        /* Hero 区：适应大 Logo 的间距 */
-        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 180px 8% 100px; background: linear-gradient(135deg, #fff 0%, #f4f7f9 100%); position: relative; }
+        /* Hero 区 */
+        .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 200px 8% 100px; background: linear-gradient(135deg, #fff 0%, #f4f7f9 100%); position: relative; }
         .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 700; line-height: 1.05; margin-bottom: 35px; letter-spacing: -1.5px; }
         .hero p { font-size: 1.5rem; color: var(--slate); max-width: 800px; line-height: 1.6; font-weight: 300; }
 
-        /* 核心卖点区：黄金五条 (The Core 5) */
-        .value-props-section { padding: 100px 8%; background: var(--off-white); border-top: 1px solid var(--border); }
+        /* 核心优势带 */
+        .stats-strip { background: var(--cobalt-navy); color: white; padding: 60px 8%; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--heritage-gold); margin-bottom: 10px; }
+        .stat-item p { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; opacity: 0.7; }
+
+        /* 黄金五条 (The Core 5) */
+        .value-props-section { padding: 120px 8%; background: var(--off-white); border-top: 1px solid var(--border); }
         .props-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .props-list { list-style: none; }
         .props-list li { margin-bottom: 30px; display: flex; align-items: flex-start; font-size: 1.25rem; line-height: 1.4; color: var(--cobalt-navy); }
@@ -42,7 +45,7 @@
         .props-list strong { font-weight: 800; color: #000; }
         .props-list span.sub-text { display: block; font-size: 1.05rem; color: var(--slate); margin-top: 5px; font-weight: 300; }
 
-        /* 战略卡片区 */
+        /* 交互卡片 */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 100px 8%; }
         .card { background: white; padding: 60px; border: 1px solid var(--border); border-top: 5px solid var(--cobalt-navy); transition: 0.4s; }
         .card:hover { transform: translateY(-10px); box-shadow: 0 40px 80px rgba(0,0,0,0.1); border-top-color: var(--heritage-gold); }
@@ -66,10 +69,8 @@
         @media (max-width: 900px) { 
             .props-container, .contact-card, .footer-grid { grid-template-columns: 1fr; } 
             nav { padding: 15px 5%; flex-direction: column; }
-            .logo-img { height: 75px; margin-bottom: 15px; }
-            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-            .nav-links a { margin: 5px 10px; font-size: 0.8rem; }
-            .hero { padding-top: 250px; }
+            .logo-img { height: 80px; margin-bottom: 15px; }
+            .hero { padding-top: 280px; }
         }
     </style>
 </head>
@@ -80,60 +81,64 @@
             <img src="logo.jpg" alt="Pan&Co. Realty LLC" class="logo-img">
         </div>
         <div class="nav-links">
-            <a href="#solutions">Value Props</a>
-            <a href="#about">The Firm</a>
+            <a href="#solutions">The Advantage</a>
             <a href="#contact">Acquisitions</a>
         </div>
     </nav>
 
     <section class="hero">
         <h1>Institutional Integrity.<br>Strategic Liquidity.</h1>
-        <p>Pan&Co. Realty LLC stands as the premier institutional acquisition firm in Southern California, delivering unparalleled execution for high-stakes residential assets.</p>
+        <p>Pan&Co. Realty LLC delivers unparalleled execution for high-stakes residential assets across Southern California.</p>
         <div style="margin-top: 60px;">
-            <a href="#contact" style="display:inline-block; padding: 25px 60px; background: var(--cobalt-navy); color: white; text-decoration: none; font-weight: 800; border-radius: 4px; font-size: 1.1rem; letter-spacing: 2px; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,26,51,0.2);">INQUIRY FOR ACQUISITION</a>
+            <a href="#contact" style="display:inline-block; padding: 25px 60px; background: var(--cobalt-navy); color: white; text-decoration: none; font-weight: 800; border-radius: 4px; font-size: 1.1rem; letter-spacing: 2px; transition: 0.3s;">INQUIRY FOR ACQUISITION</a>
         </div>
+    </section>
+
+    <section class="stats-strip">
+        <div class="stat-item"><h3>DIRECT</h3><p>CAPITAL DEPLOYMENT</p></div>
+        <div class="stat-item"><h3>7-10 DAYS</h3><p>AVERAGE CLOSING</p></div> <div class="stat-item"><h3>$0</h3><p>TOTAL COMMISSIONS</p></div>
+        <div class="stat-item"><h3>OFF-MARKET</h3><p>ASSET SPECIALISTS</p></div>
     </section>
 
     <section class="value-props-section" id="solutions">
         <div class="props-container">
             <div class="props-image">
-                <h2 style="font-family: 'Cinzel'; font-size: 3rem; line-height: 1.1; margin-bottom: 30px;">The Advantage <br><span style="color: var(--heritage-gold);">of Pan&Co.</span></h2>
-                <p style="color: var(--slate); font-size: 1.2rem; font-weight: 300;">We eliminate the complexities of traditional real estate cycles, providing a direct, capital-backed exit strategy.</p>
+                <h2 style="font-family: 'Cinzel'; font-size: 3rem; line-height: 1.1; margin-bottom: 30px;">Direct Capital <br><span style="color: var(--heritage-gold);">Advantage</span></h2>
+                <p style="color: var(--slate); font-size: 1.2rem; font-weight: 300;">We provide an institutional-grade exit strategy, removing the friction and uncertainty of traditional sales.</p>
             </div>
             <ul class="props-list">
                 <li>
                     <span class="check-icon">✓</span>
                     <div>
                         <strong>No Commissions or Hidden Fees</strong>
-                        <span class="sub-text">You keep more of your proceeds. No broker fees, ever.</span>
+                        <span class="sub-text">Maximize your net proceeds. No broker or agent fees deducted.</span>
                     </div>
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
                     <div>
                         <strong>As-Is Purchases</strong>
-                        <span class="sub-text">No need to clean, repair, or stage your home. We buy in any condition.</span>
+                        <span class="sub-text">No cleaning, repairs, or staging. We acquire assets in any condition.</span>
                     </div>
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
                     <div>
-                        <strong>Fast Closings</strong>
-                        <span class="sub-text">We close in as little as 7–14 days, or on your preferred timeline.</span>
+                        <strong>Rapid Closings (7-10 Days)</strong> <span class="sub-text">We close on your timeline, typically within 7 to 10 business days.</span>
                     </div>
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
                     <div>
-                        <strong>Cash Offers</strong>
-                        <span class="sub-text">Direct, all-cash offers with zero financing or appraisal delays.</span>
+                        <strong>All-Cash Offers</strong>
+                        <span class="sub-text">Direct capital backing with zero financing or appraisal contingencies.</span>
                     </div>
                 </li>
                 <li>
                     <span class="check-icon">✓</span>
                     <div>
-                        <strong>Professional & Confidential</strong>
-                        <span class="sub-text">A discreet, respectful, and institutionally efficient process.</span>
+                        <strong>Confidential & Professional</strong>
+                        <span class="sub-text">Respectful, discreet, and institutionally efficient process from start to finish.</span>
                     </div>
                 </li>
             </ul>
@@ -141,30 +146,30 @@
     </section>
 
     <section class="grid">
-        <div class="card"><h4>Asset Valuation</h4><p>Proprietary underwriting models ensure peak valuation based on current micro-market data.</p></div>
-        <div class="card"><h4>Capital Execution</h4><p>Discretionary capital deployment allows for rapid, non-contingent transactional certainty.</p></div>
-        <div class="card"><h4>Strategic Exit</h4><p>A white-glove disposition process managed through elite title and escrow partners.</p></div>
+        <div class="card"><h4>Asset Analysis</h4><p>Deep underwriting using local micro-market data to ensure peak transactional value.</p></div>
+        <div class="card"><h4>Firm Commitment</h4><p>Non-contingent cash offers issued within 24 hours of formal verification.</p></div>
+        <div class="card"><h4>Strategic Exit</h4><p>Seamless ownership transfer managed through elite Southern California title partners.</p></div>
     </section>
 
     <section class="contact-section" id="contact">
         <div class="contact-card">
             <div class="contact-info">
                 <h3 style="font-family: 'Cinzel'; font-size: 2.5rem; margin-bottom: 30px; color: var(--heritage-gold);">Acquisitions Desk</h3>
-                <p style="opacity: 0.9; margin-bottom: 40px; font-size: 1.2rem; font-weight: 300;">Request an institutional assessment. Our acquisitions team will provide a formal review within one business day.</p>
+                <p style="opacity: 0.9; margin-bottom: 40px; font-size: 1.2rem; font-weight: 300;">Request an institutional review. Our team will provide a formal liquidity assessment within one business day.</p>
                 <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px;">
-                    <p style="font-weight: 700; color: var(--heritage-gold); letter-spacing: 2px; margin-bottom: 15px;">CORPORATE OFFICE</p>
+                    <p style="font-weight: 700; color: var(--heritage-gold); letter-spacing: 2px; margin-bottom: 15px;">CORPORATE HEADQUARTERS</p>
                     <p style="font-size: 1.1rem; line-height: 1.8;">735 Alder Way<br>Montebello, CA 90640</p>
                     <p style="margin-top: 30px; font-size: 1.1rem;">(626) 788-8805<br>Info@panrealtygroup.com</p>
                 </div>
             </div>
             <div class="contact-form">
                 <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-                    <h4 style="margin-bottom: 30px; font-size: 1.4rem; font-family: 'Cinzel';">Property Underwriting Request</h4>
+                    <h4 style="margin-bottom: 30px; font-size: 1.4rem; font-family: 'Cinzel';">Property Underwriting Inquiry</h4>
                     <input type="text" name="address" placeholder="Property Address" required>
-                    <input type="text" name="name" placeholder="Principal Legal Name" required>
+                    <input type="text" name="name" placeholder="Legal Principal Name" required>
                     <input type="tel" name="phone" placeholder="Direct Contact Number" required>
                     <button type="submit">Submit for Review</button>
-                    <p style="font-size: 0.8rem; color: #999; margin-top: 20px; text-align: center;">Secure & Confidential Submission</p>
+                    <p style="font-size: 0.8rem; color: #999; margin-top: 20px; text-align: center;">Secure & Confidential</p>
                 </form>
             </div>
         </div>
@@ -174,23 +179,23 @@
         <div class="footer-grid">
             <div>
                 <img src="logo.jpg" alt="Pan&Co. Realty LLC" class="footer-logo-giant">
-                <p style="color: #666; font-size: 1rem; line-height: 1.8;">A specialized capital firm dedicated to residential asset acquisition across the Southern California landscape.</p>
+                <p style="color: #666; font-size: 1rem; line-height: 1.8;">Institutional residential asset acquisition across Southern California.</p>
             </div>
             <div style="padding-left: 40px;">
-                <h5 style="margin-bottom: 30px; font-size: 0.9rem; letter-spacing: 2px; color: var(--heritage-gold);">GOVERNANCE</h5>
+                <h5 style="margin-bottom: 30px; font-size: 0.9rem; letter-spacing: 2px; color: var(--heritage-gold);">COMPLIANCE</h5>
                 <p style="font-size: 0.95rem; color: #888; margin-bottom: 15px;">Privacy Policy</p>
-                <p style="font-size: 0.95rem; color: #888; margin-bottom: 15px;">SMS Consent Terms</p>
-                <p style="font-size: 0.95rem; color: #888;">Regulatory Compliance</p>
+                <p style="font-size: 0.95rem; color: #888; margin-bottom: 15px;">SMS Terms</p>
+                <p style="font-size: 0.95rem; color: #888;">Legal Disclaimer</p>
             </div>
             <div>
                 <h5 style="margin-bottom: 30px; font-size: 0.9rem; letter-spacing: 2px; color: var(--heritage-gold);">RESOURCES</h5>
-                <p style="font-size: 0.95rem; color: #888; margin-bottom: 15px;">Investor Relations</p>
-                <p style="font-size: 0.95rem; color: #888;">Corporate Contact</p>
+                <p style="font-size: 0.95rem; color: #888; margin-bottom: 15px;">About the Firm</p>
+                <p style="font-size: 0.95rem; color: #888;">Contact Us</p>
             </div>
         </div>
         <div class="legal-text">
-            <p><strong>SMS DISCLOSURE & CONSENT:</strong> By submitting an inquiry via our digital platform, you provide express written consent to Pan&Co. Realty LLC to initiate professional communications via SMS. Message and data rates may apply. Reply STOP to terminate consent at any time. <strong>DATA PRIVACY MANDATE:</strong> Pan&Co. Realty LLC maintains strict data protocols. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Originator data and consent are strictly excluded from all third-party sharing protocols.</p>
-            <p style="margin-top: 30px; font-weight: 700; letter-spacing: 1px; color: #444;">&copy; 2026 Pan&Co. Realty LLC. ALL RIGHTS RESERVED. EQUAL HOUSING OPPORTUNITY.</p>
+            <p><strong>SMS DISCLOSURE:</strong> By submitting an inquiry, you provide express written consent to Pan&Co. Realty LLC to initiate professional communications via SMS. Message and data rates may apply. Reply STOP to opt-out. <strong>DATA PRIVACY:</strong> Pan&Co. Realty LLC maintains strict protocols. Mobile information will not be shared with third parties or affiliates for marketing or promotional purposes. Originator data and consent are strictly excluded from all third-party sharing protocols.</p>
+            <p style="margin-top: 30px; font-weight: 700; color: #444;">&copy; 2026 Pan&Co. Realty LLC. ALL RIGHTS RESERVED. EQUAL HOUSING OPPORTUNITY.</p>
         </div>
     </footer>
 
